@@ -1,0 +1,15 @@
+<p *ngIf="item?.invalid && (item?.dirty || item?.touched)" class="mt-2 text-sm text-red-600 dark:text-red-500">
+  <span class="font-medium">Oops!</span>
+
+  <span class="font-bold" *ngIf="hasRequiredError">
+    This field is required.
+  </span>
+
+  <span class="font-bold" *ngIf="minlength && actualLength !== null">
+    Must be at least {{ minlength }} characters long. Currently {{ actualLength }} characters.
+  </span>
+
+  <span class="font-bold" *ngIf="item?.hasError('email')">
+    Please enter a valid email address.
+  </span>
+</p>

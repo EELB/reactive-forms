@@ -1,0 +1,62 @@
+<form class="max-w-sm mx-auto" [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+  <div class="mb-5">
+    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your name</label>
+    <input
+      formControlName="firstName"
+      type="text" id="name"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="Your name" required
+    />
+    <app-field-message-error [item]="getItem('firstName')"></app-field-message-error>
+  </div>
+
+  <div class="mb-5">
+    <label for="surname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your surname</label>
+    <input
+      formControlName="lastName"
+      type="text" id="surname"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="Your surname" required
+    />
+    <app-field-message-error [item]="getItem('lastName')"></app-field-message-error>
+  </div>
+
+  <div class="mb-5">
+    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your email</label>
+    <input
+      formControlName="email"
+      type="email" id="email"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      placeholder="name@flowbite.com" required
+    />
+    <app-field-message-error [item]="getItem('email')"></app-field-message-error>
+  </div>
+
+  <div class="mb-5">
+    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Your password</label>
+    <input
+      formControlName="password"
+      type="password" id="password"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    <app-field-message-error [item]="getItem('password')"></app-field-message-error>
+  </div>
+
+  <div class="mb-5">
+    <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-500">Repeat password</label>
+    <input
+      formControlName="repeatPassword"
+      type="password" id="repeat-password"
+      class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      required
+    />
+    <app-field-message-error [item]="getItem('repeatPassword')"></app-field-message-error>
+  </div>
+
+  <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Register new account</button>
+</form>
+
+<pre>
+  {{userForm.value | json}}
+</pre>
